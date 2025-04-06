@@ -1,15 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boletim do Aluno</title>
+    <title>Sistema de Boletim - Faculdade</title>
+    <link rel="shortcut icon" href="https://i.postimg.cc/cHzbS4qb/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <p>Início <span> > </span> Pedagogia - Licenciatura - <span id="semestre">1</span>° Semestre <span> > </span> <span class="selecionado">Boletim</span></p>
-    </header>
-    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>Faculdade Ensino Superior</h1>
+            </div>
+            <div class="user-info">
+                <span>Bem-vindo, <strong></strong></span>
+                <button class="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </header>
 
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
+                <li class="active"><a href="#"><i class="fas fa-book"></i> Boletim</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> Matrícula</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Mensagens</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="page-header">
+                <h2><i class="fas fa-book"></i> Boletim Acadêmico</h2>
+                <div class="semester-selector">
+                    <label for="semester">Período:</label>
+                    <select id="semester">
+                        <option value="2023-2">2025 - 1º Semestre</option>
+                        <option value="2023-1">2025 - 2º Semestre</option>
+                        <option value="2022-2">2024 - 2º Semestre</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grades-summary">
+                <div class="summary-card">
+                    <h3>CR (Coeficiente de Rendimento)</h3>
+                    <div class="value">8.7</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 87%;"></div>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <h3>Disciplinas Cursadas</h3>
+                    <div class="value">6</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Disciplinas Aprovadas</h3>
+                    <div class="value">5</div>
+                </div>
+            </div>
+
+            <table class="grades-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Disciplina</th>
+                        <th>CH</th>
+                        <th>Nota</th>
+                        <th>Faltas</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MAT205</td>
+                        <td>Cálculo II</td>
+                        <td>60h</td>
+                        <td>9.2</td>
+                        <td>2/20</td>
+                        <td><span class="status approved">Aprovado</span></td>
+                    </tr>
+                    <tr>
+                        <td>BDD220</td>
+                        <td>Banco de Dados</td>
+                        <td>80h</td>
+                        <td>7.8</td>
+                        <td>5/20</td>
+                        <td><span class="status approved">Aprovado</span></td>
+                    </tr>
+                    <tr>
+                        <td>PROG305</td>
+                        <td>Programação Orientada a Objetos</td>
+                        <td>80h</td>
+                        <td>8.5</td>
+                        <td>3/20</td>
+                        <td><span class="status approved">Aprovado</span></td>
+                    </tr>
+                    <tr>
+                        <td>EST310</td>
+                        <td>Estatística Aplicada</td>
+                        <td>60h</td>
+                        <td>6.7</td>
+                        <td>8/20</td>
+                        <td><span class="status approved">Aprovado</span></td>
+                    </tr>
+                    <tr>
+                        <td>ALG215</td>
+                        <td>Álgebra Linear</td>
+                        <td>60h</td>
+                        <td>5.2</td>
+                        <td>12/20</td>
+                        <td><span class="status final-exam">Exame Final</span></td>
+                    </tr>
+                    <tr>
+                        <td>SFK210</td>
+                        <td>Soft Skills</td>
+                        <td>60h</td>
+                        <td>4.8</td>
+                        <td>15/20</td>
+                        <td><span class="status failed">Reprovado</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="legend">
+                <div>
+                <h4>Legenda:</h4>
+                <div><span class="status approved"></span> Aprovado</div>
+                <div><span class="status final-exam"></span> Exame Final</div>
+                <div><span class="status failed"></span> Reprovado</div>
+                </div>
+                <div>
+                <button class="download">Baixar boletim</button>
+            </div>
+          </div>
+        </main>
+    </div>
 </body>
 </html>
