@@ -16,7 +16,7 @@
                 <h1>Faculdade Ensino Superior</h1>
             </div>
             <div class="user-info">
-                <span>Bem-vindo, <strong></strong></span>
+                <span>Bem-vindo Estudante<strong></strong></span>
                 <button class="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button>
             </div>
         </header>
@@ -48,7 +48,7 @@
             <div class="grades-summary">
                 <div class="summary-card">
                     <h3>CR (Coeficiente de Rendimento)</h3>
-                    <div class="value">8.7</div>
+                    <div class="value" id="media">8.7</div>
                     <div class="progress-bar">
                         <div class="progress" style="width: 87%;"></div>
                     </div>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="summary-card">
                     <h3>Disciplinas Aprovadas</h3>
-                    <div class="value">5</div>
+                    <div class="value">4</div>
                 </div>
             </div>
 
@@ -79,32 +79,32 @@
                         <td>MAT205</td>
                         <td>Cálculo II</td>
                         <td>60h</td>
-                        <td>9.2</td>
-                        <td>2/20</td>
+                        <td id="nota1">9.2</td>
+                        <td><span id="falta1">0</span>/20</td>
                         <td><span class="status approved">Aprovado</span></td>
                     </tr>
                     <tr>
                         <td>BDD220</td>
                         <td>Banco de Dados</td>
                         <td>80h</td>
-                        <td>7.8</td>
-                        <td>5/20</td>
+                        <td id="nota2">7.8</td>
+                        <td><span id="falta2">0</span>/20</td>
                         <td><span class="status approved">Aprovado</span></td>
                     </tr>
                     <tr>
                         <td>PROG305</td>
                         <td>Programação Orientada a Objetos</td>
                         <td>80h</td>
-                        <td>8.5</td>
-                        <td>3/20</td>
+                        <td id="nota3">8.5</td>
+                        <td><span id="falta3">0</span>/20</td>
                         <td><span class="status approved">Aprovado</span></td>
                     </tr>
                     <tr>
                         <td>EST310</td>
                         <td>Estatística Aplicada</td>
                         <td>60h</td>
-                        <td>6.7</td>
-                        <td>8/20</td>
+                        <td id="nota4">6.7</td>
+                        <td><span id="falta4">0</span>/20</td>
                         <td><span class="status approved">Aprovado</span></td>
                     </tr>
                     <tr>
@@ -120,7 +120,7 @@
                         <td>Soft Skills</td>
                         <td>60h</td>
                         <td>4.8</td>
-                        <td>15/20</td>
+                        <td>7/20</td>
                         <td><span class="status failed">Reprovado</span></td>
                     </tr>
                 </tbody>
@@ -134,10 +134,11 @@
                 <div><span class="status failed"></span> Reprovado</div>
                 </div>
                 <div>
-                <button class="download">Baixar boletim</button>
+                <button class="download" onclick="again()">Baixar boletim</button>
             </div>
           </div>
         </main>
     </div>
 </body>
+<script src="script.js"></script>
 </html>
