@@ -140,17 +140,46 @@
                 <div><span class="status failed"></span> Reprovado</div>
                 </div>
                 <div>
-                <button class="download" onclick="again()">Baixar boletim</button>
+                <button class="download-btn" onclick="again()">Baixar boletim</button>
             </div>
           </div>
         </main>
     </div>
     <script>
-        const toggleBtn = document.querySelector('.menu-toggle');
-        const sidebar = document.querySelector('.sidebar');
-    
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+
+            // Abrir/fechar menu
+            toggleBtn.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+
+            // Fechar menu ao clicar no overlay
+            overlay.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+
+            // Fechar menu ao clicar em um item (em mobile)
+            document.querySelectorAll('.sidebar li a').forEach(item => {
+                item.addEventListener('click', () => {
+                    if (window.innerWidth <= 1024) {
+                        sidebar.classList.remove('active');
+                        overlay.classList.remove('active');
+                    }
+                });
+            });
+
+            // Ajustar o menu quando a janela for redimensionada
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1024) {
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
