@@ -108,7 +108,6 @@ body {
     grid-area: sidebar;
     background-color: #161616;
     color: white;
-    padding: 20px 0;
     position: fixed;
     top: 70px;
     left: 0;
@@ -118,6 +117,34 @@ body {
     transition: transform 0.3s ease-in-out;
     z-index: 999;
     overflow-y: auto;
+}
+
+/* Área do nome no sidebar */
+.sidebar-user-info {
+    display: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid #2c3e50;
+    margin-bottom: 10px;
+    background-color: rgba(0, 176, 255, 0.1);
+}
+
+.sidebar-user-info .user-name {
+    color: #00B0FF;
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-user-info .user-name:before {
+    content: "\f007";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.9rem;
 }
 
 .sidebar ul {
@@ -393,6 +420,15 @@ body {
     .main-content {
         margin-left: 0;
     }
+
+    /* Mostra nome no dropdown e esconde no header */
+    .sidebar-user-info {
+        display: block;
+    }
+    
+    .header .user-info span {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -402,10 +438,6 @@ body {
 
     .logo h1 {
         font-size: 1rem;
-    }
-
-    .user-info span {
-        display: none;
     }
 
     .page-header {
@@ -467,5 +499,13 @@ body {
 
     .logout-btn i {
         margin: 0;
+    }
+
+    .sidebar-user-info {
+        padding: 12px 15px;
+    }
+    
+    .sidebar-user-info .user-name {
+        font-size: 0.85rem;
     }
 }
