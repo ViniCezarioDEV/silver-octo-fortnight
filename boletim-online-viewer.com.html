@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Boletim - Faculdade</title>
-    <link rel="shortcut icon" href="https://i.postimg.cc/cHzbS4qb/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="https://i.postimg.cc/vZ6HMP5h/Zenlek-Logo-White.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                <h1>Faculdade Ensino Superior</h1>
+            <div class="header-left">
+                <button class="menu-toggle" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Faculdade Ensino Superior</h1>
+                </div>
             </div>
+        
             <div class="user-info">
-                <span>Bem-vindo Estudante<strong></strong></span>
+                <span>Bem-vindo <span id="nome">Estudante</span></span>
                 <button class="logout-btn">Sair <i class="fas fa-sign-out-alt"></i></button>
             </div>
         </header>
@@ -76,52 +82,52 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>MAT205</td>
-                        <td>Cálculo II</td>
-                        <td>60h</td>
-                        <td id="nota1">9.2</td>
-                        <td><span id="falta1">0</span>/20</td>
-                        <td><span class="status approved">Aprovado</span></td>
+                        <td data-label="Código">MAT205</td>
+                        <td data-label="Disciplina">Cálculo II</td>
+                        <td data-label="CH">60h</td>
+                        <td id="nota1" data-label="Nota">9.2</td>
+                        <td data-label="Faltas"><p><span id="falta1">0</span>/20</p></td>
+                        <td data-label="Status"><span class="status approved">Aprovado</span></td>
                     </tr>
                     <tr>
-                        <td>BDD220</td>
-                        <td>Banco de Dados</td>
-                        <td>80h</td>
-                        <td id="nota2">7.8</td>
-                        <td><span id="falta2">0</span>/20</td>
-                        <td><span class="status approved">Aprovado</span></td>
+                        <td data-label="Código">BDD220</td>
+                        <td data-label="Disciplina">Banco de Dados</td>
+                        <td data-label="CH">80h</td>
+                        <td id="nota2" data-label="Nota">7.8</td>
+                        <td data-label="Faltas"><p><span id="falta2">0</span>/20</p></td>
+                        <td data-label="Status"><span class="status approved">Aprovado</span></td>
                     </tr>
                     <tr>
-                        <td>PROG305</td>
-                        <td>Programação Orientada a Objetos</td>
-                        <td>80h</td>
-                        <td id="nota3">8.5</td>
-                        <td><span id="falta3">0</span>/20</td>
-                        <td><span class="status approved">Aprovado</span></td>
+                        <td data-label="Código">PROG305</td>
+                        <td data-label="Disciplina">Programação Orientada a Objetos</td>
+                        <td data-label="CH">80h</td>
+                        <td id="nota3" data-label="Nota">8.5</td>
+                        <td data-label="Faltas"><p><span id="falta3">0</span>/20</p></td>
+                        <td data-label="Status"><span class="status approved">Aprovado</span></td>
                     </tr>
                     <tr>
-                        <td>EST310</td>
-                        <td>Estatística Aplicada</td>
-                        <td>60h</td>
-                        <td id="nota4">6.7</td>
-                        <td><span id="falta4">0</span>/20</td>
-                        <td><span class="status approved">Aprovado</span></td>
+                        <td data-label="Código">EST310</td>
+                        <td data-label="Disciplina">Estatística Aplicada</td>
+                        <td data-label="CH">60h</td>
+                        <td id="nota4" data-label="Nota">6.7</td>
+                        <td data-label="Faltas"><p><span id="falta4">0</span>/20</p></td>
+                        <td data-label="Status"><span class="status approved">Aprovado</span></td>
                     </tr>
                     <tr>
-                        <td>ALG215</td>
-                        <td>Álgebra Linear</td>
-                        <td>60h</td>
-                        <td>5.2</td>
-                        <td>12/20</td>
-                        <td><span class="status final-exam">Exame Final</span></td>
+                        <td data-label="Código">ALG215</td>
+                        <td data-label="Disciplina">Álgebra Linear</td>
+                        <td data-label="CH">60h</td>
+                        <td id="nota5" data-label="Nota">5.2</td>
+                        <td data-label="Faltas"><p><span id="falta5">0</span>/20</p></td>
+                        <td data-label="Status"><span class="status final-exam">Exame Final</span></td>
                     </tr>
                     <tr>
-                        <td>SFK210</td>
-                        <td>Soft Skills</td>
-                        <td>60h</td>
-                        <td>4.8</td>
-                        <td>7/20</td>
-                        <td><span class="status failed">Reprovado</span></td>
+                        <td data-label="Código">SFK210</td>
+                        <td data-label="Disciplina">Soft Skills</td>
+                        <td data-label="CH">60h</td>
+                        <td id="nota6" data-label="Nota">4.8</td>
+                        <td data-label="Faltas"><p><span id="falta6">0</span>/20</p></td>
+                        <td data-label="Status"><span class="status failed">Reprovado</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -139,6 +145,14 @@
           </div>
         </main>
     </div>
+    <script>
+        const toggleBtn = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+    
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
 </body>
 <script src="script.js"></script>
 </html>

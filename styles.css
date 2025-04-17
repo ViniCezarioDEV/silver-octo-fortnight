@@ -257,3 +257,169 @@ body {
     gap: 5px;
     transition: background-color 0.3s;
 }
+
+
+@media (max-width: 1024px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        grid-area: unset;
+        width: 100%;
+    }
+
+    .sidebar {
+        grid-area: unset;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .sidebar li {
+        flex: 1 1 120px;
+        text-align: center;
+    }
+
+    .sidebar li a {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .semester-selector {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .grades-summary {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .grades-table thead {
+        display: none;
+    }
+
+    .grades-table tbody tr {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .grades-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+    }
+
+    .grades-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 10px;
+    }
+}
+
+
+
+/* MOBILE */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #1c1c1c;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #00B0FF;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+.logo h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logout-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo h1 {
+        font-size: 1rem;
+    }
+
+    .user-info span {
+        display: none;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 60px;
+        left: -250px;
+        width: 200px;
+        height: 100%;
+        background-color: #161616;
+        padding-top: 10px;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .main-content {
+        margin-top: 10px;
+    }
+}
