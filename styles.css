@@ -348,6 +348,11 @@ body {
     color: white;
 }
 
+.status.progress {
+    background-color: #d9af3d;
+    color: white;
+}
+
 /* Rodapé/Legenda */
 .legend {
     display: flex;
