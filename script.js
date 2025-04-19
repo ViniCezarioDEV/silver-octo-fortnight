@@ -15,20 +15,35 @@ let nota4 = gerarNotaAleatoria(5.0, 8.7);
 let nota5 = gerarNotaAleatoria(0.0, 3.5);// algebra (exame final)
 let nota6 = gerarNotaAleatoria(0.0, 4.7);// soft (reprovado)
 
-document.getElementById("nota1").textContent = nota1;
-document.getElementById("nota2").textContent = nota2;
-document.getElementById("nota3").textContent = nota3;
-document.getElementById("nota4").textContent = nota4;
-document.getElementById("nota5").textContent = nota5; // algebra (exame final)
-document.getElementById("nota6").textContent = nota6; // soft (reprovado)
+document.getElementById("nota1").textContent = 'S/N'; // nota1
+document.getElementById("nota2").textContent = 'S/N'; // nota2
+document.getElementById("nota3").textContent = 'S/N'; // nota3
+document.getElementById("nota4").textContent = 'S/N'; // nota4
+document.getElementById("nota5").textContent = 'S/N'; // algebra (exame final) nota5
+document.getElementById("nota6").textContent = 'S/N'; // soft (reprovado) nota6
 
-let media = (nota1 + nota2 + nota3 + nota4 + nota5 + nota6) / 6;
-media = Math.round(media * 10) / 10;
+// AQUI MEXE NA MEDIA
+
+//media = Math.round(media * 10) / 10;
+media = 'S/N'
+
+if (typeof media === 'string' || myVar instanceof String){
+    media = 'S/N'
+
+    let barra = document.querySelector(".progress");
+    barra.style.width = 0 + "%";
+
+    
+} else {
+    let media = (nota1 + nota2 + nota3 + nota4 + nota5 + nota6) / 6;
+    media = Math.round(media * 10) / 10;
+
+    let barra = document.querySelector(".progress");
+    barra.style.width = (media * 10) + "%";
+}
 
 document.getElementById("media").textContent = media;
 
-let barra = document.querySelector(".progress");
-barra.style.width = (media * 10) + "%";
 
 
 
