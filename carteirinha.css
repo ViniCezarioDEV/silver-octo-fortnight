@@ -314,17 +314,18 @@ body {
 
 @media (max-width: 768px) {
     .card-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
     }
-
+  
     .student-card {
-        transform: rotate(90deg);
-        transform-origin: center;
-        width: 55vh; /* tamanho ideal */
-        height: auto;
+      transform: rotate(90deg);
+      transform-origin: center;
+      width: 65vh; /* aumentei pra deixar mais largo */
+      height: auto;
+      max-width: none; /* remove restrição se tiver */
     }
-}
+  }
