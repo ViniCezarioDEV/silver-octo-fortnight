@@ -41,43 +41,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 const nomesMasculinos = [
-    "Lucas Oliveira Santos",
-    "Gabriel Silva Pereira",
-    "Matheus Costa Rodrigues",
-    "Rafael Almeida Souza",
-    "João Pedro Fernandes",
-    "Pedro Henrique Lima",
-    "Henrique Barbosa Carvalho",
-    "Caio Martins Ribeiro",
-    "Bruno Gomes Ferreira",
-    "Thiago Nascimento Alves",
-    "André Cunha Monteiro",
-    "Felipe Castro Mendes",
-    "Gustavo Rocha Teixeira",
-    "Daniel Pires Cardoso",
-    "Vinícius Moura Correia",
-    "Eduardo Lopes Vasconcelos",
-    "Leandro Moreira Brito",
-    "Diego Ramos Andrade",
-    "Fernando Xavier Dias",
-    "Alexandre Torres Campos",
-    "Marcelo Guerra Peixoto",
-    "Rodrigo Santana Machado",
-    "Igor Melo Guimarães",
-    "Nathan Duarte Freitas",
-    "Vitor Hugo Rezende",
-    "Samuel Caldeira Tavares",
-    "Murilo Fonseca Aragão",
-    "Leonardo Barros Siqueira",
-    "Otávio Miranda Dantas",
-    "Antonio Bezerra Neves"
+    "Vinicius de Almeida Moreira Cezario",
+    "Adriel Jhoaquim Guarachi",
+    "Gustavo Almeida Alves da Costa",
 ];
 
 function gerarNumero(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let nomeId = gerarNumero(0, 29)
+let nomeId = gerarNumero(0, 2)
 document.getElementById('nome').textContent = nomesMasculinos[nomeId]
 
 let matricula = gerarNumero(124152, 786858)
